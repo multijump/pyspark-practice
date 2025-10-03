@@ -1,6 +1,6 @@
-from pyspark.sql import SparkSession, functions as F
-from pyspark.sql.functions import pandas_udf
-import pandas as pd
+from pyspark.sql import SparkSession, functions as F # type: ignore
+from pyspark.sql.functions import pandas_udf # type: ignore
+import pandas as pd # type: ignore
 
 spark = SparkSession.builder.appName("udf_pandas").getOrCreate()
 df = spark.read.option("header", "true").option("inferSchema", "true").csv("raw_data/yellow_tripdata_2020-07.csv")
